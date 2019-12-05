@@ -1,0 +1,15 @@
+.Hangman
+{
+    max-width:150px;
+    border: 5px solid red; 
+}
+
+.Hangman img
+{
+    width: 100%;
+}
+
+.Hide
+{
+    display:none;
+}
