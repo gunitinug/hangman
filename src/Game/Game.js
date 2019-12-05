@@ -3,12 +3,13 @@ import Hangman from '../Hangman/Hangman';
 import Letters from '../Letters/Letters';
 import Score from '../Modal/Score/Score';
 import Modal from '../Modal/Modal';
+import classes from './Game.module.css';
 
 class Game extends Component
 {
     state = {
         lives: 12,
-        solution: 'kai from tafe-nsw',
+        solution: 'a strong family',
         correctUsedLetters: [],
         availableLetters: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
         usedLetters: [],
@@ -70,19 +71,23 @@ class Game extends Component
     render ()
     {
         return (
-            <div>
-                <p>hangman, game, available letters, used letters, modal</p>
+            <div className={classes.Game}>
+                <h1>Hangman</h1>
+
+                {/* <p>hangman, game, available letters, used letters, modal</p>
                 <p>Available letters: {this.state.availableLetters.join(', ')}</p>
                 <p>Correct letters: {this.state.correctUsedLetters}</p>
                 <p>Incorrect letters: {this.state.usedLetters   }</p>
-                <p>Lives: {this.state.lives}</p>
-                
+                <p>Lives: {this.state.lives}</p> */}    
+
                 <Score solution={this.state.solution} matched={this.state.correctUsedLetters} />
                 <br></br><br></br><br></br>
-                <Hangman lives={this.state.lives} />
-                <Letters setSolved={this.setSolvedHandler} solution={this.state.solution} correct={this.guessedCorrectHandler} incorrect={this.guessedIncorrectHandler} 
+                <div style={{display:'flex'}}>
+                    <Hangman lives={this.state.lives} />
+                    <Letters setSolved={this.setSolvedHandler} solution={this.state.solution} correct={this.guessedCorrectHandler} incorrect={this.guessedIncorrectHandler} 
                     feed={this.state.availableLetters}
                 />
+                </div>
                 <Modal solved={this.state.solved} gameOver={this.gameOverHandler} />
             </div>
         );

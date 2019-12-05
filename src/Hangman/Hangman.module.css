@@ -1,7 +1,8 @@
 .Hangman
 {
-    max-width:150px;
-    border: 5px solid red; 
+    min-width:300px;
+    border: 5px solid rgba(0, 0,0, 0.5); 
+    margin-right: 30px;
 }
 
 .Hangman img

@@ -1,5 +1,6 @@
 import React from 'react';
 import AvailableLetter from './AvailableLetter/AvailableLetter';
+import classes from './Letters.module.css';
 
 const letters = (props) => {
     const playHandler = (alphabet) => {
@@ -28,11 +29,12 @@ const letters = (props) => {
 
     
 
-    return (
-        <div>
-            <h1>Game</h1>
+    return (    
+        <div className={classes.Letters}>
             <p>Solution: {props.solution}</p>
-            {availableLetters}
+            <div className={classes.AvailableLetters}>
+                {availableLetters}
+            </div>
         </div>
     );
 }

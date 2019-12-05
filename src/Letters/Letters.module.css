@@ -1,0 +1,7 @@
+.AvailableLetters
+{
+    padding-top: 30px;
+    max-width: 500px;
+    height: 80px;
+    overflow: auto;
+}   
