@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Hangman from '../Hangman/Hangman';
 import Letters from '../Letters/Letters';
 import Score from '../Modal/Score/Score';
+import Modal from '../Modal/Modal';
 
 class Game extends Component
 {
@@ -10,8 +11,27 @@ class Game extends Component
         solution: 'kai from tafe',
         correctUsedLetters: [],
         availableLetters: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
-        usedLetters: []
+        usedLetters: [],
+        solved: false
     };
+
+    setSolvedHandler = () => {
+        const solution = this.state.solution.replace(/\s/g, '').replace(/-/g, '').split('');
+        const compare = [ ...this.state.correctUsedLetters].sort();
+        const unique = solution.filter(
+            (elem,index,self) => (index===self.indexOf(elem))
+        ).sort();
+
+        const solved = JSON.stringify(unique) === JSON.stringify(compare);
+    
+        this.setState({
+            solved: solved
+        });
+        
+        // JSON.stringify(unique) === JSON.stringify(compare)
+    };
+
+    gameOverHandler = () => this.state.lives<1;
 
     guessedCorrectHandler = (letter) => {
         const index = this.state.availableLetters.indexOf(letter);
@@ -60,9 +80,10 @@ class Game extends Component
                 <Score solution={this.state.solution} matched={this.state.correctUsedLetters} />
                 <br></br><br></br><br></br>
                 <Hangman lives={this.state.lives} />
-                <Letters solution={this.state.solution} correct={this.guessedCorrectHandler} incorrect={this.guessedIncorrectHandler} 
+                <Letters setSolved={this.setSolvedHandler} solution={this.state.solution} correct={this.guessedCorrectHandler} incorrect={this.guessedIncorrectHandler} 
                     feed={this.state.availableLetters}
                 />
+                <Modal solved={this.state.solved} gameOver={this.gameOverHandler} />
             </div>
         );
     }

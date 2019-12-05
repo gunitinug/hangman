@@ -23,7 +23,14 @@ const AvailableLetter = (props) => {
     //     }
     // }
 
-    useEffect( ()=>setShow(true),[show] );
+    const setStuff = () => {
+        setShow(true);
+        props.setSolved();
+    };
+    useEffect( ()=>setStuff(),[show] );
+
+    // useEffect( ()=>setShow(true),[show] );
+    // useEffect( ()=>props.setSolved(),[show] );
 
     if (!show)
     {

@@ -74,7 +74,7 @@ const hangman = (props) => {
 
     return (
         <div className={attachedClasses.join(' ')}>
-            <img src={hangmanImage} />
+            <img src={hangmanImage} alt="" />
         </div>
     );
 }

@@ -33,7 +33,7 @@ const score = (props) => {
 
     return (
         <div className={[classes.Score,classes.Letters].join(' ')}>
-            <p>{output}</p>
+            <p>{output.join('\xa0\xa0\xa0')}</p>
         </div>
     )
 }

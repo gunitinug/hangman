@@ -21,10 +21,12 @@ const letters = (props) => {
     const availableLetters = [ ...props.feed ].map(
         (alphabet,i) => {
             return (
-                <AvailableLetter play={()=>playHandler(alphabet)} correct={()=>props.correct(alphabet)} incorrect={()=>props.incorrect(alphabet)} solution={props.solution} key={i} alphabet={alphabet} />
+                <AvailableLetter setSolved={props.setSolved} play={()=>playHandler(alphabet)} correct={()=>props.correct(alphabet)} incorrect={()=>props.incorrect(alphabet)} solution={props.solution} key={i} alphabet={alphabet} />
             );
         }
     );
+
+    
 
     return (
         <div>
