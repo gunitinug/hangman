@@ -1,0 +1,10 @@
+.LettersAndHangman
+{
+    display: flex;
+    justify-content: center;
+}
+
+.Game h1
+{
+    text-align: center;
+}
