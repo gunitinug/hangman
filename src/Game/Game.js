@@ -8,7 +8,7 @@ class Game extends Component
 {
     state = {
         lives: 12,
-        solution: 'kai from tafe',
+        solution: 'kai from tafe-nsw',
         correctUsedLetters: [],
         availableLetters: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
         usedLetters: [],

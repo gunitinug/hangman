@@ -27,7 +27,7 @@ const AvailableLetter = (props) => {
         setShow(true);
         props.setSolved();
     };
-    useEffect( ()=>setStuff(),[show] );
+    useEffect( setStuff,[show] );
 
     // useEffect( ()=>setShow(true),[show] );
     // useEffect( ()=>props.setSolved(),[show] );
