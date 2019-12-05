@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import Hangman from '../Hangman/Hangman';
 import Letters from '../Letters/Letters';
-
+import Score from '../Modal/Score/Score';
 
 class Game extends Component
 {
     state = {
         lives: 12,
-        solution: 'apple',
+        solution: 'kai from tafe',
         correctUsedLetters: [],
         availableLetters: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
         usedLetters: []
@@ -57,6 +57,8 @@ class Game extends Component
                 <p>Incorrect letters: {this.state.usedLetters   }</p>
                 <p>Lives: {this.state.lives}</p>
                 
+                <Score solution={this.state.solution} matched={this.state.correctUsedLetters} />
+                <br></br><br></br><br></br>
                 <Hangman lives={this.state.lives} />
                 <Letters solution={this.state.solution} correct={this.guessedCorrectHandler} incorrect={this.guessedIncorrectHandler} 
                     feed={this.state.availableLetters}

@@ -1,0 +1,12 @@
+.Score
+{
+    max-width: 400px;
+    border: 5px solid blue;
+}
+
+.Letters
+{
+    font-size: xx-large;
+    color: blue;
+    text-align: center;
+}
