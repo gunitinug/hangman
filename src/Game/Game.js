@@ -83,10 +83,10 @@ class Game extends Component
                 <Score solution={this.state.solution} matched={this.state.correctUsedLetters} />
                 <br></br><br></br><br></br>
                 <div className={classes.LettersAndHangman}>
+                    <Hangman lives={this.state.lives} />
                     <Letters setSolved={this.setSolvedHandler} solution={this.state.solution} correct={this.guessedCorrectHandler} incorrect={this.guessedIncorrectHandler} 
                     feed={this.state.availableLetters}
                     />
-                    <Hangman lives={this.state.lives} />
                 </div>
                 <Modal solved={this.state.solved} gameOver={this.gameOverHandler} />
             </div>
