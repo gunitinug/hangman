@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import classes from './AvailableLetter.module.css';
+import Ax from '../../hoc/Ax';
 
 const AvailableLetter = (props) => {
     const [show,setShow]=useState(true);
@@ -49,9 +50,9 @@ const AvailableLetter = (props) => {
     const letter = show ? <span onClick={()=>setShow(false)} className={classes.AvailableLetter}>{props.alphabet}</span> : null;
 
     return (
-        <span>
+        <Ax>
             {letter}
-        </span>
+        </Ax>
     );
 }
 

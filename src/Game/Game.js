@@ -9,7 +9,7 @@ class Game extends Component
 {
     state = {
         lives: 12,
-        solution: 'a strong family',
+        solution: 'my name is logan',
         correctUsedLetters: [],
         availableLetters: ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'],
         usedLetters: [],
@@ -82,11 +82,11 @@ class Game extends Component
 
                 <Score solution={this.state.solution} matched={this.state.correctUsedLetters} />
                 <br></br><br></br><br></br>
-                <div style={{display:'flex'}}>
-                    <Hangman lives={this.state.lives} />
+                <div className={classes.LettersAndHangman}>
                     <Letters setSolved={this.setSolvedHandler} solution={this.state.solution} correct={this.guessedCorrectHandler} incorrect={this.guessedIncorrectHandler} 
                     feed={this.state.availableLetters}
-                />
+                    />
+                    <Hangman lives={this.state.lives} />
                 </div>
                 <Modal solved={this.state.solved} gameOver={this.gameOverHandler} />
             </div>
